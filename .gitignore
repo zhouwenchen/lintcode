@@ -4,4 +4,6 @@
 .classpath
 .project
 .gitignore.swp
-bin
+target
+mvnw
+mvnw.cmd
