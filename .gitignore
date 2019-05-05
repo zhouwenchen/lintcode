@@ -1,0 +1,7 @@
+.git
+.settings
+.svn
+.classpath
+.project
+.gitignore.swp
+bin
