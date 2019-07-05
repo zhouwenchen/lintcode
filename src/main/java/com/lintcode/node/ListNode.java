@@ -6,10 +6,10 @@ package com.lintcode.node;
  * @date 2019年3月27日上午11:43:56   
  */
 public class ListNode {
-	int val;
-	ListNode next;
+	public int val;
+	public ListNode next;
 
-	ListNode(int x) {
+	public ListNode(int x) {
 		val = x;
 		next = null;
 	}
