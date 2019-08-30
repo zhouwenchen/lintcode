@@ -68,9 +68,7 @@ public class Find {
 	public static void main(String[] args) {
 		int[][] arr = { { 1, 2, 8, 9 }, { 2, 4, 9, 12 }, { 4, 7, 10, 13 }, { 6, 8, 11, 15 } };
 //		boolean result = find(arr,16);
-		boolean result = find2(arr,15);
+		boolean result = find(arr,7);
 		System.out.println(result);
 	}
-
-
 }

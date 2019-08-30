@@ -54,7 +54,7 @@ public class PrintListReserver {
 		node4.next = node5;
 		node5.next = node6;
 		
-//		printListReserver(node1);
-		printListReserver2(node1);
+		printListReserver(node1);
+//		printListReserver2(node1);
 	}
 }	

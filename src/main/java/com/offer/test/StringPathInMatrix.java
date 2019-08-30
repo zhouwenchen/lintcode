@@ -66,7 +66,7 @@ public class StringPathInMatrix {
 		int rows = 3;
 		int cols = 4;
 		char[] str = "BFCE".toCharArray();
-		boolean b = hasPath(matrix, rows, cols, str );
+		boolean b = hasPath(matrix, rows, cols, str);
 		System.out.println(b);
 	}
 }

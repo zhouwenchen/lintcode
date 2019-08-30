@@ -7,7 +7,7 @@ package com.offer.test;
  *  指数是1，
  *  指数大于1
  *  指数小于0
- *  
+ *
  * @author zhouwenchen@021.com  
  * @date 2019年6月18日 上午11:19:17 
  */
@@ -44,8 +44,8 @@ public class PowerDemo {
 	}
 
 	public static void main(String[] args) {
-		double base = -2.5;
-		int exp = 3;
+		double base = 2.5;
+		int exp = -4;
 		double d = power(base, exp);
 		System.out.println(d);
 		double pow = Math.pow(base, exp);

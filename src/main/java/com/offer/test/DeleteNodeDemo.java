@@ -94,7 +94,7 @@ public class DeleteNodeDemo {
 		node7.next = node8;
 
 		// 删除某一个节点
-		// delteNode1(node1, node7);
+//		 delteNode1(node1, node7);
 		
 		// 删除头结点
 //		delteNode1(node1, node1);
@@ -102,6 +102,19 @@ public class DeleteNodeDemo {
 		// 删除尾结点
 //		delteNode1(node1, node8);
 		
-		deleteNode2(node1, node8);
+//		deleteNode2(node1, node8);
+		
+		// 删除链表中间的某一个节点
+//		deleteNode2(node1, node7);
+		
+		// 删除链表的头部节点
+		deleteNode2(node1, node1);
+		
+		
+		 
+		while(node1 != null){
+			System.out.print(node1.val + "\t");
+			node1 = node1.next;
+		}
 	}
 }

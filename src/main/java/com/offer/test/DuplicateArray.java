@@ -12,14 +12,18 @@ package com.offer.test;
 public class DuplicateArray {
 
 	public static boolean duplicate(int[] arr) {
+		// 条件判断，数组是否为空
 		if (arr.length <= 0 || arr == null) {
 			return false;
 		}
+
+		// 判断数组中数据是否满足条件要求（取值范围在0-n-1之间）
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] > arr.length || arr[i] < 0) {
 				return false;
 			}
 		}
+
 		for (int i = 0; i < arr.length; i++) {
 			while (i != arr[i]) {
 				// 替换

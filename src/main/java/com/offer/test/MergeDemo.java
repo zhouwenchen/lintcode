@@ -83,8 +83,6 @@ public class MergeDemo {
 		}
 		return node.next;
 	}
-
-	
 	
 	public static void main(String[] args) {
 		ListNode node1 = new ListNode(1);

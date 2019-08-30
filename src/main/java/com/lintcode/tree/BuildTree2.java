@@ -60,8 +60,10 @@ public class BuildTree2 {
 	}
 	
 	public static void main(String[] args) {
-		int[] preorder = new int[] { 2, 1, 3 };
-		int[] inorder = new int[] { 1, 2, 3 };
+//		int[] preorder = new int[] { 2, 1, 3 };
+//		int[] inorder = new int[] { 1, 2, 3 };
+		int[] preorder = new int[] { 1, 2, 4, 7, 3, 5, 6, 8};
+		int[] inorder = new int[] { 4, 7, 2, 1, 5, 3, 8, 6 };
 		TreeNode root = buildTree(preorder, inorder);
 		System.out.println(root);
 	}

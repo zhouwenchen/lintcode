@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @date 2019年6月18日 下午6:54:21 
  */
 public class MatchPatternCoreDemo {
+	
 	public static boolean match(String input,String pattern){
 		if(input == null || pattern == null){
 			return false;

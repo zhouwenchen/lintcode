@@ -26,7 +26,7 @@ public class IsSymmetric {
 		stack.push(root.right);
 
 		while (!stack.isEmpty()) {
-			TreeNode node1 = stack.pop();
+			TreeNode node1 = stack.pop();// 每次取出两个栈中的元素，这两个元素也就是位置上的对称，还需要判断值是否相等
 			TreeNode node2 = stack.pop();
 			if (node1 == null && node2 == null) {
 				continue;
@@ -34,9 +34,10 @@ public class IsSymmetric {
 			if (node1 == null || node2 == null || node1.val != node2.val) {
 				return false;
 			}
-			stack.push(node1.left);
+			stack.push(node1.left);// node1的左节点和node2的右节点是对称的节点
 			stack.push(node2.right);
-			stack.push(node1.right);
+			
+			stack.push(node1.right);// node1 的右节点和node2的左节点是对称的节点
 			stack.push(node2.left);
 		}
 		return true;

@@ -9,6 +9,7 @@ import com.lintcode.node.ListNode;
  * 3.返回链表表头是第一个不重复结点，需要一个前驱结点prenode记录不重复链表，其next应该初始为NULL，如果有下一个不重复结点，则next是下一个不重复结点。
  * 
  * 链表形如如下的方式：1->2->3->3->4->4->5 
+ * 删除重复的链表节点是 1->2->5
  * @author zhouwenchen@021.com  
  * @date 2019年6月18日 下午5:30:40 
  */

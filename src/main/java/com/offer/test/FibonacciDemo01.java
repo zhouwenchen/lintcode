@@ -140,8 +140,6 @@ public class FibonacciDemo01 {
 		return value[n & 3];
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		// 1.使用递归实现的算法（效率太低了）
 //		System.out.println(fibonacci1(33)); 	// fibonacci1(33)=3524578
@@ -159,7 +157,6 @@ public class FibonacciDemo01 {
 			int n = scanner.nextInt();
 			System.out.println(FibonacciDemo01.fibonacci5(n, 19999997));
 		}
-		
 		
 	}
 }

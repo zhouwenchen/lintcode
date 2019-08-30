@@ -24,7 +24,11 @@ public class StackWithMin {
 		}
 	}
 
-	public static void stackWithMinPop(int value) {
+	/**
+	 * 出栈操作
+	 * @param value
+	 */
+	public static void stackWithMinPop() {
 		if (data.size() > 0 && min.size() > 0) {
 			data.pop();
 			min.pop();
@@ -53,5 +57,28 @@ public class StackWithMin {
 	}
 
 	public static void main(String[] args) {
+		stackWithMinPush(3);
+		System.out.println("入栈中值是：3");
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPush(4);
+		System.out.println("入栈中值是：4");
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPush(2);
+		System.out.println("入栈中值是：2");
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPush(1);
+		System.out.println("入栈中值是：1");
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		
+		System.out.println("此时开始出栈操作");
+		stackWithMinPop();
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPop();
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPop();
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		stackWithMinPop();
+		System.out.println("栈中此时最小值是：" + stackWithMinMin());
+		
 	}
 }

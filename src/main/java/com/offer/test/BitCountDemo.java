@@ -62,7 +62,7 @@ public class BitCountDemo {
 //		System.out.println(bitCount1(15));
 //		System.out.println(bitCount1(-1)); // 如果是负数的话，这种解决方案是错误的
 //		System.out.println(bitCount2(14));
-		System.out.println(bitCount2(-1));
-//		System.out.println(bigCount3(9));
+//		System.out.println(bitCount2(-1));
+		System.out.println(bigCount3(9));
 	}
 }

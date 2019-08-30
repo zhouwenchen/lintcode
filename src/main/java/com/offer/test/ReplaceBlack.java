@@ -23,7 +23,7 @@ public class ReplaceBlack {
 		int index = newLength;
 		char[] result = new char[newLength];
 		// 2.从后向前进行
-		for(int i = str.length-1;i>=0;i--){
+		for (int i = str.length - 1; i >= 0; i--){
 			if(str[i] == ' '){
 				result[--index] = '0';
 				result[--index] = '2';

@@ -1,5 +1,7 @@
 package com.offer.test;
 
+import java.util.HashSet;
+
 import com.lintcode.node.ListNode;
 
 /**  
@@ -39,6 +41,14 @@ public class MeetNodeDemo {
 			slow = slow.next;
 		}
 		return slow;
+	}
+	
+	private static ListNode entryNodeOfLoop(ListNode pHead){
+		HashSet<ListNode> set = new HashSet<ListNode>();
+		while(pHead !=null){
+//			if(set.)
+		}
+		return pHead;
 	}
 	
 	public static void main(String[] args) {

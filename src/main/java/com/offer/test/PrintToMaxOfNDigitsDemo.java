@@ -31,25 +31,24 @@ public class PrintToMaxOfNDigitsDemo {
 
 	/**
 	 * 使用字符串的方式，解决整型最大值的问题
-	 * TODO 不是太明白，有待继续探究
+	 * TODO 不是太明白，有待继续探究【20190731】	思考问题：
 	 */
-	public static void printToMaxOfDigits2(int n){
-		if(n <= 0){
+	public static void printToMaxOfDigits2(int n) {
+		if (n <= 0) {
 			System.out.println("输入的没有意义" + n);
 			return;
 		}
-		
-		// 申明一个字符串数组，用来存放一个大叔
-		char[] number =  new char[n];
-		for(int i = 0; i < number.length;i++){// 初始化字符数组为字符串‘0’
+
+		// 申明一个字符数组，用来存放一个大数的形式
+		char[] number = new char[n];
+		for (int i = 0; i < number.length; i++) {// 初始化字符数组为字符串‘0’
 			number[i] = '0';
 		}
-		
-		while(!increment(number)){// 如果字符数组不溢出的情况下，那么将循环的遍历 TODO
+
+		while (!increment(number)) {// 如果字符数组不溢出的情况下，那么将循环的遍历 TODO
 			printNumber(number);// 遍历满足条件的数组 TODO
 		}
 	}
-	
 	
 	/**
 	 * 打印字符串
@@ -75,35 +74,35 @@ public class PrintToMaxOfNDigitsDemo {
 	 * @return
 	 */
 	private static boolean increment(char[] number) {
-		boolean isOverflow = false; // 判断是否溢出
-		int nTakeOver = 0;// 判断是否进位
+		boolean isOverflow = false; 	// 判断是否溢出
+		int nTakeOver = 0;				// 判断是否进位
 		int nLength = number.length;
-		
-		for(int i = nLength -1;i >=0;--i){
+
+		for (int i = nLength - 1; i >= 0; --i) {
 			int nSum = number[i] - '0' + nTakeOver;
-			if(i == nLength - 1){ //末尾自加1
+			if (i == nLength - 1) {		// 末尾自加1
 				++nSum;
 			}
-			if(nSum >= 10){
-				if(i == 0){
+			if (nSum >= 10) { 			// 判断是否需要进位
+				if (i == 0) {
 					isOverflow = true;
-				}else{
+				} else {
 					nSum -= 10;
 					nTakeOver = 1;
 					number[i] = (char) ('0' + nSum);
 				}
-			}else{
+			} else {
 				number[i] = (char) (nSum + '0');
 				break;
 			}
 		}
-		
+
 		return isOverflow;
 	}
 
 	public static void main(String[] args) {
 		// 第一种方式的弊端，在于没有考虑到类型的最大值，可能会导致整型的溢出操作，所以没有考虑到代码的鲁棒性的问题。
-//		printToMaxOfNDigits1(20);
+//		printToMaxOfNDigits1(3);
 		
 		// 可以使用的是字符串来解决整型的最大值的问题。
 		printToMaxOfDigits2(3);

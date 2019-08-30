@@ -11,6 +11,12 @@ import com.lintcode.node.TreeNode;
  */
 public class HasSubtree {
 	
+	/**
+	 * 
+	 * @param node1
+	 * @param node2
+	 * @return 
+	 */
 	public static boolean hasSubtree(TreeNode node1,TreeNode node2){
 		if(node1 == null || node2 == null){
 			return false;
@@ -26,11 +32,13 @@ public class HasSubtree {
 	 * @return
 	 */
 	private static boolean isSubTree(TreeNode node1, TreeNode node2) {
-		  if(node2 == null) return true;
-	        if(node1 == null) return false;
-	        if(node1.val == node2.val) return isSubTree(node1.left, node2.left)
-	                && isSubTree(node1.right, node2.right);
-	        return false;
+		if (node2 == null)
+			return true;
+		if (node1 == null)
+			return false;
+		if (node1.val == node2.val)
+			return isSubTree(node1.left, node2.left) && isSubTree(node1.right, node2.right);
+		return false;
 
 	}
 
