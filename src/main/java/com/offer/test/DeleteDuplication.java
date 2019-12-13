@@ -24,23 +24,23 @@ public class DeleteDuplication {
 		if (head == null) {
 			return null;
 		}
-		ListNode root = new ListNode(0);
-		root.next = head;
+		ListNode root = new ListNode(0); // 定义一个指向头结点的节点，没有实际的意义，仅仅用于记录头结点的
+		root.next = head;// 头结点指向链表的第一个节点
 		ListNode pre = root;
 		ListNode cur = head;
-		while (cur != null) {
-			if (cur.next != null && cur.val == cur.next.val) {
-				while (cur.next != null && cur.val == cur.next.val) {
-					cur = cur.next;
+		while (cur != null) {  // 当前节点不为空的情况下
+			if (cur.next != null && cur.val == cur.next.val) {// 如果当前节点的下一个节点而且当前节点和下一个节点的值相同的话。
+				while (cur.next != null && cur.val == cur.next.val) { // 循环遍历删除相同的节点
+					cur = cur.next; // 删除当前的节点。
 				}
-				pre.next = cur.next;
+				pre.next = cur.next; // 当前节点的前驱节点的下一个节点指向当前节点的下一个节点，表示删除当前节点。
 			} else {
 				pre = cur;
 			}
-			cur = cur.next;
+			cur = cur.next; // 继续判断下一个节点
 		}
 
-		return root.next;
+		return root.next;// 返回链表的第一个节点
 	}
 	
 	public static void main(String[] args) {

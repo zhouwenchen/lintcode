@@ -31,12 +31,12 @@ public class Reverse {
 		if(head == null){
 			return null;
 		}
-		
+
 		ListNode first = head;
 		ListNode reverseHead = null; 	//建立一个新的节点用来存放结果
 		while (first != null) {
 			// 头结点的下一个节点设置为null
-			ListNode second = first.next;
+ 			ListNode second = first.next;
 			first.next = reverseHead;
 			reverseHead = first;
 			first = second;
@@ -54,8 +54,7 @@ public class Reverse {
 		head.next = null;
 		return reverseHead;
 	}
-	
-	
+
 	public static void main(String[] args) {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
@@ -64,8 +63,8 @@ public class Reverse {
 		node1.next = node2;
 		node2.next = node3;
 		
-//		ListNode head = reverse(node1);
-		ListNode head = reverseList(node1);
+		ListNode head = reverse(node1);
+//		ListNode head = reverseList(node1);
 		
 		while(head!= null){
 			if(head.next == null){
