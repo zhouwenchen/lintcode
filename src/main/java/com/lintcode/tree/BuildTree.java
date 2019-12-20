@@ -59,7 +59,7 @@ public class BuildTree {
 	 * @param inorder
 	 * @param instart
 	 * @param inend
-	 * @param i
+	 * @param key
 	 * @return
 	 */
 	private static int findPositon(int[] inorder, int instart, int inend, int key) {
