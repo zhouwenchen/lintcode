@@ -114,6 +114,10 @@ public class Flatten {
         flatten1(right);
     }
 
+    /**
+     * 使用栈实现
+     * @param root
+     */
     public static void flatten2(TreeNode root){
         if(root == null){
             return;
@@ -131,9 +135,9 @@ public class Flatten {
             }
             node.left = null;
             if(stack.isEmpty()){
-                node.right = null;
+                node.right = null; // 将叶子节点的右节点设置为 null
             }else {
-                node.right = stack.peek();
+                node.right = stack.peek();  // 节点的右节点指向链表的下一个节点
             }
         }
     }

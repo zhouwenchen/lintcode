@@ -49,7 +49,7 @@ Output：[1,2,3]
 public class PreorderTraversal {
 	
 	private static List<Integer> resultList = new ArrayList<Integer>();
-	 private static List<List<Integer>> resultList1 = new ArrayList<>();
+	private static List<List<Integer>> resultList1 = new ArrayList<>();
 	
     /** 前序遍历 ,非递归的方式实现的
      * @param root
@@ -76,7 +76,7 @@ public class PreorderTraversal {
 	 * @return
 	 */
 	public static List<Integer> preorderTraversal2(TreeNode root) {
-		if(root!=null){
+		if(root != null){
 			resultList.add(root.val);
 		}
 		TreeNode left = root.left;
@@ -91,7 +91,7 @@ public class PreorderTraversal {
 	}
 	
 	/**
-	 * 中序遍历，递归的方式实现的
+	 * 前序遍历，递归的方式实现的
 	 * @param root
 	 * @return
 	 */
@@ -105,7 +105,7 @@ public class PreorderTraversal {
 	}
 	
 	// TODO ===========================
-	/** 中序遍历 ，递归调用
+	/** 中序遍历 ，非递归调用
 	 * @param root
 	 * @return
 	 */
@@ -297,12 +297,12 @@ public class PreorderTraversal {
 		node3.right = node7;
 		
 //		node7.right = node8;
-		
-		List<Integer> list = inorderTraversal(node1);
+//		List<Integer> list = inorderTraversal(node1);
+//		List<Integer> list = inorderTraversal(node1);
 // 		List<Integer> list = preorderTraversal3(node1);
 // 		List<Integer> list = postorderTraversal(node1);
 // 		List<Integer> list = levelTraverse(node1);
-// 		List<Integer> list = depthTraversal1(node1);
+ 		List<Integer> list = depthTraversal(node1);
 		for (Integer integer : list) {
 			System.out.print(integer + " ");
 		}
