@@ -1,6 +1,11 @@
 package com.lintcode.easy;
 
-/**  
+import com.sun.org.apache.xpath.internal.objects.XNumber;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
  * 
  * 56. 两数之和
 给一个整数数组，找到两个数使得他们的和等于一个给定的数 target。
@@ -40,12 +45,31 @@ public class TwoSum {
 		return result;
 	}
 
+	/**
+	 * 使用一次遍历和 hashMap，实现
+	 * @param numbers
+	 * @param target
+	 * @return
+	 */
+	public static int[] twoSum2(int[] numbers, int target) {
+		Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+		for(int i = 0; i < numbers.length; i++){
+			int complent = target - numbers[i];
+			if(map.containsKey(complent)){
+				return new int[]{map.get(complent),i};
+			}
+			map.put(numbers[i],i);
+		}
+		throw new IllegalArgumentException("No two sum solution");
+	}
+
+
     public static void main(String[] args) {
-//    	int[] numbers = new int[]{15, 2, 7, 11};
-//    	int target = 9;
-    	int[] numbers = new int[]{1,0,-1};
-    	int target = 0;
-    	int[] sum = twoSum(numbers, target);
+    	int[] numbers = new int[]{15, 2, 7, 11};
+    	int target = 9;
+//    	int[] numbers = new int[]{1,0,-1};
+//    	int target = 0;
+    	int[] sum = twoSum2(numbers, target);
     	for (int i : sum) {
 			System.out.print(i+"\t");
 		}
