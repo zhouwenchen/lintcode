@@ -38,14 +38,15 @@ public class ThreeSum {
         }
         // 数组排序
         Arrays.sort(nums);
-        for(int i = 0 ; i < nums.length - 2; i++){
+        for(int i = 0 ; i < nums.length - 1; i++){
             // 跳过重复的元素
             if(i > 0 && nums[i] == nums[i -1]){
                 continue;
             }
             int left = i + 1;
             int right = nums.length - 1;
-            int target = -nums[i]; // TODO 为啥？
+            // TODO 为啥，20200506 将这道题分解成 “两数之和”
+            int target = -nums [i];
 
             twoSum(nums,left,right,target,result);
         }

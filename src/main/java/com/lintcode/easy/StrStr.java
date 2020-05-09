@@ -131,10 +131,10 @@ public class StrStr {
 		String source = "abcde";
 		String target = "e";
 		
-//		int index = strStr(source,target);
-//		System.out.println(index);
-		
 		int index = strStr2(source,target);
 		System.out.println(index);
+		
+//		int index = strStr2(source,target);
+//		System.out.println(index);
 	}
 }

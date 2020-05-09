@@ -78,8 +78,8 @@ public class SearchRange {
     	node8.left = node4;
     	node8.right = node12;
     	
-//		List<Integer> lists = searchRange(node20, 10, 22);
-		List<Integer> lists = searchRange2(node20, 10, 22);
+		List<Integer> lists = searchRange(node20, 10, 22);
+//		List<Integer> lists = searchRange2(node20, 10, 22);
 		for (Integer integer : lists) {
 			System.out.println(integer);
 		}
@@ -113,6 +113,4 @@ public class SearchRange {
 			helper(root.right, k1, k2);
 		}
 	}
-    
-    
 }

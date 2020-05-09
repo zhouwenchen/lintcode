@@ -31,13 +31,14 @@ package com.lintcode.easy;
  * Students in the basic class of the algorithm only need to use the arithmetic operator ‘+’ to complete the problem, without considering the requirements of the bit operation.
  */
 public class Aplusb {
+
     public static int aplusb(int a, int b) {
         if(b == 0){
             return a;
         }
 
-        int sum = a^b;
-        int carry = (a&b)<<1;
+        int sum = a ^ b;
+        int carry = (a&b) << 1;
         return aplusb(sum,carry);
     }
 

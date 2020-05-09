@@ -32,9 +32,8 @@ import java.util.LinkedList;
 public class MinStack {
 
     /**
-     * 思路：定义两个栈，一个是datastack，另个是记录栈中最小值的  minstack
+     * 思路：定义两个栈，一个是 datastack，另个是记录栈中最小值的  minstack
      */
-
     private LinkedList<Integer> dataStack = new LinkedList();
     private LinkedList<Integer> minStack = new LinkedList();
     public MinStack() {}
@@ -65,7 +64,7 @@ public class MinStack {
         return data;
     }
 
-    /*
+    /**
      * @return: An integer
      */
     public int min() {
@@ -89,6 +88,9 @@ public class MinStack {
         stack.push(1);
         int min1 = stack.min();
         System.err.println(min1);
-
+        System.out.println("弹出栈中的元素数据 ===== ");
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
     }
 }

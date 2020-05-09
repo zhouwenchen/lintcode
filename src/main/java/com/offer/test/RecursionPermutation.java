@@ -16,7 +16,12 @@ public class RecursionPermutation {
 	
 	private static List<String> result = new ArrayList<>();
 	private static HashSet<String> set = new HashSet<>();
-	
+
+	/**
+	 * TODO 这个方法递归方法不是特别明白 20200508
+	 * @param str
+	 * @return
+	 */
 	public static List<String> permutation(String str){
 		if(str == null){
 			return result;
@@ -40,17 +45,20 @@ public class RecursionPermutation {
 			set.add(r);
 		} else {
 			for (int i = start; i <= end; i++) {
+				// 交换数组第一个元素与后续的元素
 				char tmp = array[start];
 				array[start] = array[i];
 				array[i] = tmp;
+
+				// 后续元素递归全排列
 				Permutation(String.valueOf(array), start + 1, array.length - 1);
 
+				// 将交换后的数组还原
 				tmp = array[start];
 				array[start] = array[i];
 				array[i] = tmp;
 			}
 		}
-		
 	}
 
 	public static void main(String[] args) {

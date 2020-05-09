@@ -26,8 +26,7 @@ package com.lintcode.easy;
  * @date 2019年3月27日上午11:43:56   
  */
 public class MergeSortedArray {
-	
-	
+
 	public int[] mergeSortedArray(int[] A, int[] B) {
 		int alen = A.length;
 		int blen = B.length;
@@ -49,7 +48,7 @@ public class MergeSortedArray {
 	
 
 	private void mergeSortedArraytemp(int[] A, int m, int[] B, int n) {
-		int k  = m+n -1;
+		int k  = m + n -1;
 		m--;
 		n--;
 		while(k>=0){
@@ -66,11 +65,13 @@ public class MergeSortedArray {
 		MergeSortedArray mergeSortedArray = new MergeSortedArray();
 //		int[] A = {1,2,3};
 //		int[] B = {4,5};
-		int[] A = {7};
-		int[] B = {5,7};
+		int[] A = {1,3,4};
+		int[] B = {2,5};
+//		int[] A = {7};
+//		int[] B = {5,7};
 		int[] C = mergeSortedArray.mergeSortedArray(A, B);
 		for (int i : C) {
-			System.out.println(i);
+			System.out.print(i + " ");
 		}
 	}
 }

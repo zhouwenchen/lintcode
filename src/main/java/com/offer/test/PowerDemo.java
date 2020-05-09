@@ -15,6 +15,7 @@ public class PowerDemo {
 
 	/**
 	 * 数值的整次方根
+	 * TODO 问题1.由于使用递归，会导致 StackOverflowError 溢出的
 	 * @param base 基数
 	 * @param exp 指数
 	 * @return
@@ -43,10 +44,26 @@ public class PowerDemo {
 		return -1;
 	}
 
+	/**
+	 *
+	 * @param base 基数
+	 * @param exp 指数
+	 * @return
+	 */
+	public static double Mypow(double base, int exp) {
+		double ans = 1;
+		for(int m = exp; m!=0;m /= 2, base *=base){
+			if((m&1)==1){ // 奇数
+				ans *= base;
+			}
+		}
+		return exp < 0 ? 1 / ans:ans;
+	}
+
 	public static void main(String[] args) {
-		double base = 2.5;
-		int exp = -4;
-		double d = power(base, exp);
+		double base = 2.0000;
+		int exp = 7;
+		double d = Mypow(base, exp);
 		System.out.println(d);
 		double pow = Math.pow(base, exp);
 		System.out.println(pow);

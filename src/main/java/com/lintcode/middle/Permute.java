@@ -65,6 +65,6 @@ public class Permute {
 
     public static void main(String[] args) {
         List<List<Integer>> permute = permute(new int[]{1, 2, 3});
-        permute.forEach(System.out::print);
+        permute.forEach(System.out::println);
     }
 }

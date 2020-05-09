@@ -46,10 +46,12 @@ public class RotateString {
 	public void rotateString(char[] str, int offset) {
 		// write your code here
 		char temp;
-		if (offset == 0)
+		if (offset == 0) {
 			return;
-		if (str.length == 0)
+		}
+		if (str.length == 0) {
 			return;
+		}
 		int len = str.length;
 		for (int i = 1; i <= offset % len; i++) {
 			temp = str[len - 1];

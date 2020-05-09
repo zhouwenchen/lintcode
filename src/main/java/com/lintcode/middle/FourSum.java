@@ -46,7 +46,7 @@ public class FourSum {
                 }
                 for(int l = j + 1,r = n -1; l < r; ++l){
                     if(l > j+1 && nums[l] == nums[l - 1]){
-                        continue;
+                         continue;
                     }
                     while (r > l && nums[i] + nums[j] + nums[l] + nums[r] > target){
                         r--;

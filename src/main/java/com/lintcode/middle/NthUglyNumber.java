@@ -29,21 +29,25 @@ import java.util.Queue;
 public class NthUglyNumber {
 
     public static int nthUglyNumber(int n) {
-        Queue<Long> Q = new PriorityQueue<Long>();
-        HashSet<Long> inQ = new HashSet<>();
+        Queue<Long> heap = new PriorityQueue<Long>();
+        HashSet<Long> set = new HashSet<>();
 
         Long[] params = new Long[]{2L,3L,5L};
         for(int i = 0; i < 3; i++){
-            Q.add(params[i]);
-            inQ.add(params[i]);
+            heap.add(params[i]);
+            set.add(params[i]);
         }
         Long number = Long.valueOf(1);
+
+        // 每次都把当前的数据分别乘上 2，3，5 加入到heap和set中
+        // 由于heap保持着最小堆，它的peek()是最小的，那么个即保持了一个递增序列
+        // 我们需要的number是走到第n次的时候heap上的peek()值
         for(int i = 1; i < n; i++){
-            number = Q.poll();
+            number = heap.poll();
             for(int j = 0; j < 3;j++){
-                if (!inQ.contains(params[j] * number)) {
-                    Q.add(number * params[j]);
-                    inQ.add(number * params[j]);
+                if (!set.contains(params[j] * number)) {
+                    heap.add(number * params[j]);
+                    set.add(number * params[j]);
                 }
             }
         }
