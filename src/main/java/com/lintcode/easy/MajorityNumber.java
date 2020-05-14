@@ -1,10 +1,6 @@
 package com.lintcode.easy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**  
  * 46. 主元素
@@ -96,6 +92,16 @@ public class MajorityNumber {
 		}
 		return currentMajor;
 	}
+
+	/**
+	 * 排序，取中位数
+	 * @param nums
+	 * @return
+	 */
+	public static int majorityNumber3(List<Integer> nums) {
+		Collections.sort(nums);
+		return nums.get(nums.size()/2);
+	}
 	
 	public static void main(String[] args) {
 		List<Integer> nums = new ArrayList<>();
@@ -108,7 +114,8 @@ public class MajorityNumber {
 		nums.add(2);
 //		int value = majorityNumber(nums);
 //		int value = majorityNumber1(nums);
-		int value = majorityNumber2(nums);
+//		int value = majorityNumber2(nums);
+		int value = majorityNumber3(nums);
 		System.out.println(value);
 	}
 }

@@ -73,8 +73,8 @@ public class MaxSubArray {
 		int[] nums = new int[] { 1, -2, 3, -4, 5, -6, 7, -8, 9 };
 //		int[] nums = new int[]{-2,2,-3,4,-1,2,1,-5,3};
 //		int[] nums = new int[]{-1,0,1};
-//		int sum = maxSubArray(nums);
-		int sum = maxSubArray2(nums);
+		int sum = maxSubArray1(nums);
+//		int sum = maxSubArray2(nums);
 		System.out.println(sum);
 	}
 }

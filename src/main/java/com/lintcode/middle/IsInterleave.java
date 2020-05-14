@@ -44,7 +44,7 @@ public class IsInterleave {
         int len1 = s1.length();
         int len2 = s2.length();
         int len3 = s3.length();
-        if(s1.length() + s2.length() != s3.length()){
+        if(len1 + len2 != len3){
             return false;
         }
 //        if(s1.length()==0 && s2.equals(s3)|| s2.length() == 0 && s1.equals(s3)){
@@ -78,8 +78,8 @@ public class IsInterleave {
 
     public static void main(String[] args) {
 //        boolean b = isInterleave("aabcc", "dbbca", "aadbbcbcac");
-        boolean b = isInterleave("a", "", "a");
-//        boolean b = isInterleave("abbcddef", "accbbbcd", "abbcddefaccbbbcd");
+//        boolean b = isInterleave("a", "", "a");
+        boolean b = isInterleave("abbcddef", "accbbbcd", "abbcddefaccbbbcd");
         System.out.println(b);
     }
 }

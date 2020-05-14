@@ -31,24 +31,26 @@ public class SortLetters {
 		int end = chars.length - 1;
 
 		while (start < end) {
-			while (chars[start] > 90) { // 表示的是小写字母
+			while (start < end && chars[start] > 90) { // 表示的是小写字母
 				start++;
 			}
-			while (chars[end] <= 90) {
+			while (start < end && chars[end] <= 90) {
 				end--;
 			}
-			char tmp = chars[start];
-			chars[start] = chars[end];
-			chars[end] = tmp;
-			start++;
-			end--;
+			if(start < end){
+				char tmp = chars[start];
+				chars[start] = chars[end];
+				chars[end] = tmp;
+				start++;
+				end--;
+			}
 		}
-
 	}
     
     public static void main(String[] args) {
 //    	char[] chars = "abAcD".toCharArray();
-    	char[] chars = "abAcAcD".toCharArray();
+//    	char[] chars = "abAcAcD".toCharArray();
+    	char[] chars = "ab".toCharArray();
 		sortLetters(chars);
 		System.out.println(chars);
 		

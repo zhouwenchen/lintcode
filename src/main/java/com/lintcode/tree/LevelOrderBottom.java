@@ -59,11 +59,11 @@ public class LevelOrderBottom {
     			TreeNode head = queue.poll();
     			level.add(head.val);
     			if(head.left != null){
-    				queue.offer(head.left);
-    			}
-    			if(head.right != null){
-    				queue.offer(head.right);
-    			}
+					queue.offer(head.left);
+				}
+				if(head.right != null){
+					queue.offer(head.right);
+				}
     		}
     		result.add(level);
     	}

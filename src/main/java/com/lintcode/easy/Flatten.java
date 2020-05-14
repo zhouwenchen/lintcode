@@ -77,10 +77,7 @@ public class Flatten {
     	}
     	return result;
     }
-    
 }
-
-
 
 interface NestedInteger {
 	// @return true if this NestedInteger holds a single integer,

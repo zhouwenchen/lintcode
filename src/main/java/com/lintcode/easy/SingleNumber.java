@@ -41,6 +41,7 @@ public class SingleNumber {
     
     public static void main(String[] args) {
     	int[] A = new int[]{1,1,2,2,3,4,4};
-		singleNumber(A);
+		int result = singleNumber(A);
+		System.out.println(result);
 	}
 }

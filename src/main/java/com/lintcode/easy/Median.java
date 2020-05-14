@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**  
  * 
@@ -62,11 +63,29 @@ public class Median {
 		return list.get(length/2-1);
 	}
 
+	/**
+	 * 使用 stream 实现操作
+	 * @param nums
+	 * @return
+	 */
+	public static int median2(int[] nums) {
+		long count = Arrays.stream(nums).count();
+		List<Integer> collect = Arrays.stream(nums).boxed().collect(Collectors.toList());
+		Collections.sort(collect);
+
+		if(count%2 != 0){
+			return collect.get((int)count/2);
+		}
+		return collect.get((int)count/2 - 1);
+	}
+
+
 	public static void main(String[] args) {
-		int[] nums = { 4, 5, 1, 2, 3 };
+		int[] nums = { 4, 5, 1, 2, 3,0 };
 //		int[] nums = { 7, 9, 4, 5 };
 //		int[] nums = {  };
-		int median = median(nums);
+		int median = median2(nums);
 		System.out.println(median);
+
 	}
 }

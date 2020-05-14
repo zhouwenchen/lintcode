@@ -37,8 +37,7 @@ public class RecoverRotatedSortedArray {
 		nums.add(3);
 		System.out.println("nums:" + nums);
 //		recoverRotatedSortedArray(nums);
-//		recoverRotatedSortedArray1(nums);
-		recoverRotatedSortedArray3(nums);
+//		recoverRotatedSortedArray3(nums);
 		System.out.println(nums);
 	}
 
@@ -58,34 +57,10 @@ public class RecoverRotatedSortedArray {
 			}
 			nums.subList(0, i).clear();
 		}
-		System.out.println("nums:" + nums);
 	}
 
-	public static List<Integer> recoverRotatedSortedArray1(List<Integer> nums) {
-		List<Integer> numB = new ArrayList<>();
-		// 先判断最小值是
-		int min = nums.get(0);
-		Iterator<Integer> it = nums.iterator();
-		boolean flag = true;
-		Integer temp = 0;
-		while (it.hasNext()) {
-			if (flag) {
-				flag = false;
-				temp = it.next();
-				min = min > temp ? temp : min;
-			}
-			Integer B = it.next();
-			numB.add(B);
-			min = min > B ? B : min;
-		}
-		numB.add(temp);
-		// System.out.println("min:" + min);
-		// System.out.println("numB:" + numB);
-		return numB;
-	}
 	public static List<Integer> recoverRotatedSortedArray3(List<Integer> nums) {
 		Collections.sort(nums);
 		return null;
-		
 	}
 }

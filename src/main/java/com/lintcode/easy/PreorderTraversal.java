@@ -125,7 +125,7 @@ public class PreorderTraversal {
 		return res;
 	}
 	
-	/** 中序遍历 非递归调用
+	/** 中序遍历 递归调用
 	 * @param root
 	 * @return
 	 */
@@ -159,25 +159,38 @@ public class PreorderTraversal {
 	}
 	
 	// TODO ===========================
-	
-	/** 后序遍历 ，非递归调用
+	/** 后序遍历 ，非递归调用 TODO 这个有问题
 	 * @param root
 	 * @return
 	 */
 	public static List<Integer> postorderTraversal(TreeNode root) {
-		List<TreeNode> p = new ArrayList<TreeNode>();
-		List<Integer> res = new ArrayList<Integer>();
-		while (root != null || p.size() != 0) {
-			while (root != null) {
-				p.add(root);
-				root = root.left;
-			}
-			root = p.get(p.size() - 1);
-			res.add(root.val);
-			p.remove(p.size() - 1);
-			root = root.right;
+
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode cur = root;
+		/* 用来记录最新出栈的节点，
+		 * 如果当前节点的右儿子与flag相同，说明当前节点右子树已完成遍历
+		 */
+		TreeNode flag = null;
+		ArrayList<Integer> ans = new ArrayList<Integer>(20);
+		while (cur != null) {
+			stack.push(cur);
+			cur = cur.left;
 		}
-		return res;
+		while (!stack.isEmpty()) {
+			cur = stack.pop();
+			if (cur.right == null || cur.right == flag) {
+				ans.add(cur.val);
+				flag = cur;
+			} else {
+				stack.push(cur);
+				cur = cur.right;
+				while (cur != null) {
+					stack.push(cur);
+					cur = cur.left;
+				}
+			}
+		}
+		return ans;
 	}
 	
 	/** 后序遍历 递归调用
@@ -187,11 +200,11 @@ public class PreorderTraversal {
 	public static List<Integer> postorderTraversal1(TreeNode root) {
 		TreeNode left = root.left;
 		if(left != null){
-			postorderTraversal(left);
+			postorderTraversal1(left);
 		}
 		TreeNode right = root.right;
 		if(right != null){
-			postorderTraversal(right);
+			postorderTraversal1(right);
 		}
 		if(root!=null){
 			resultList.add(root.val);

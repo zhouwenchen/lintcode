@@ -1,6 +1,9 @@
 package com.lintcode.easy;
 
-/**  
+import java.util.Optional;
+import java.util.function.Consumer;
+
+/**
  * 35. 翻转链表
 翻转一个链表
 
@@ -33,7 +36,8 @@ public class Reverse {
 		}
 
 		ListNode first = head;
-		ListNode reverseHead = null; 	//建立一个新的节点用来存放结果
+		//建立一个新的节点用来存放结果
+		ListNode reverseHead = null;
 		while (first != null) {
 			// 头结点的下一个节点设置为null
  			ListNode second = first.next;
@@ -43,10 +47,16 @@ public class Reverse {
 		}
 		return reverseHead;
 	}
-	
+
+	/**
+	 * 递归实现
+	 * @param head
+	 * @return
+	 */
 	public static ListNode reverseList(ListNode head){
-		if(head == null || head.next == null)
+		if(head == null || head.next == null){
 			return head;
+		}
 		ListNode second = head.next;
 		ListNode reverseHead = reverseList(second);
 		second.next = head;
@@ -63,8 +73,8 @@ public class Reverse {
 		node1.next = node2;
 		node2.next = node3;
 		
-		ListNode head = reverse(node1);
-//		ListNode head = reverseList(node1);
+//		ListNode head = reverse(node1);
+		ListNode head = reverseList(node1);
 		
 		while(head!= null){
 			if(head.next == null){
@@ -74,7 +84,6 @@ public class Reverse {
 			}
 			head = head.next;
 		}
-		
 	}
 }
 

@@ -51,12 +51,54 @@ public class SearchMatrix {
     	}
         return false;
     }
+
+	/**
+	 * 第二种方式
+	 * @param matrix
+	 * @param target
+	 * @return
+	 */
+	public static boolean searchMatrix1(int[][] matrix, int target) {
+		int moveUp = matrix.length - 1;
+		int moveRight = 0;
+		while (moveUp >= 0 && moveRight < matrix[0].length){
+			if(matrix[moveUp][moveRight] == target){
+				return true;
+			} else if(matrix[moveUp][moveRight] > target){
+				moveUp--;
+			}else{
+				moveRight++;
+			}
+		}
+    	return false;
+	}
+
+	/**
+	 * 第三种方式
+	 * @param matrix
+	 * @param target
+	 * @return
+	 */
+	public static boolean searchMatrix2(int[][] matrix, int target) {
+		int moveUp = 0;
+		int moveLeft = matrix[0].length-1;
+		while (moveUp <= matrix.length-1 && moveLeft >= 0){
+			if(matrix[moveUp][moveLeft] == target){
+				return true;
+			} else if(matrix[moveUp][moveLeft] > target){
+				moveLeft--;
+			}else{
+				moveUp++;
+			}
+		}
+		return false;
+	}
     
     public static void main(String[] args) {
-    	int target = 10;
+    	int target = 6;
 		int[][] matrix = new int[][]{{1,2,3},{4,5,6},{7,8,9}};
 		
-		boolean b = searchMatrix(matrix , target);
+		boolean b = searchMatrix2(matrix , target);
 		System.out.println(b);
 	}
 }
