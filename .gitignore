@@ -8,4 +8,7 @@ target
 mvnw
 mvnw.cmd
 demo.iml
+.ideaworkspace
+workspace
 .idea
+libraries/
