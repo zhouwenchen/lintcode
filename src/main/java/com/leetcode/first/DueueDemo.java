@@ -33,7 +33,5 @@ public class DueueDemo {
         PriorityQueue priorityQueue = new PriorityQueue();
         priorityQueue.add(1);
         priorityQueue.add(2);
-
-
     }
 }
