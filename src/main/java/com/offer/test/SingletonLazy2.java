@@ -7,7 +7,7 @@ package com.offer.test;
  * @author zhouwenchen@021.com  
  * @date 2019年7月23日 上午10:50:57 
  */
-public class SingletonLazy2 {
+public class 	SingletonLazy2 {
 	// 1.创建私有的构造函数，防止外部的初始化
 	private SingletonLazy2(){}
 	// 2.私有化成员对象为null 
