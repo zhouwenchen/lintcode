@@ -8,10 +8,9 @@
 		<version>2.1.3.RELEASE</version>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>lintcode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>lintcode</name>
 
 	<properties>
 		<java.version>1.8</java.version>

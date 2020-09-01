@@ -1,14 +1,5 @@
-.git
-.settings
-.svn
 .classpath
 .project
-.gitignore.swp
-target
-mvnw
-mvnw.cmd
-demo.iml
-.ideaworkspace
-workspace
-.idea
-libraries/
+.settings/
+
+.idea/**
